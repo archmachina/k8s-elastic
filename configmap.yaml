@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: elastic-usersetup
+  labels:
+    component: elastic
+data:
+  usersetup.sh: |

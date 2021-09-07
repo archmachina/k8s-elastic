@@ -1,0 +1,31 @@
+---
+
+resources:
+- service.yaml
+- statefulset.yaml
+# - configmap.yaml
+
+# commonLabels:
+#   app: elastic
+
+# generatorOptions:
+#   labels:
+#     app: elastic
+
+vars:
+- name: ELASTIC_SVC
+  objref:
+    kind: Service
+    name: elastic-svc
+    apiVersion: v1
+
+configMapGenerator:
+  - name: elastic-usersetup
+    files:
+      - usersetup.sh
+
+secretGenerator:
+  - name: elastic-password
+    type: Opaque
+  - name: elastic-cert
+    type: kubernetes.io/tls
