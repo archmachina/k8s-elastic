@@ -54,9 +54,9 @@ spec:
             - name: cluster.name
               value: "elastic"
             - name: cluster.initial_master_nodes
-              value: "elastic-ss-0,elastic-ss-1,elastic-ss-2"
+              value: "$(ELASTIC_SS)-0,$(ELASTIC_SS)-1,$(ELASTIC_SS)-2"
             - name: discovery.seed_hosts
-              value: "elastic-ss-0.$(ELASTIC_SVC),elastic-ss-1.$(ELASTIC_SVC),elastic-ss-2.$(ELASTIC_SVC)"
+              value: "$(ELASTIC_SS)-0.$(ELASTIC_SVC),$(ELASTIC_SS)-1.$(ELASTIC_SVC),$(ELASTIC_SS)-2.$(ELASTIC_SVC)"
             - name: transport.port
               value: "9300"
             - name: transport.host
