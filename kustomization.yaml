@@ -1,20 +1,20 @@
 ---
 
 resources:
-- service.yaml
-- statefulset.yaml
+  - service.yaml
+  - statefulset.yaml
 
 vars:
-- name: ELASTIC_SVC
-  objref:
-    kind: Service
-    name: elastic-svc
-    apiVersion: v1
-- name: ELASTIC_SS
-  objref:
-    kind: StatefulSet
-    apiVersion: apps/v1
-    name: elastic-ss
+  - name: ELASTIC_SVC
+    objref:
+      kind: Service
+      name: elastic-svc
+      apiVersion: v1
+  - name: ELASTIC_SS
+    objref:
+      kind: StatefulSet
+      apiVersion: apps/v1
+      name: elastic-ss
 
 configMapGenerator:
   - name: elastic-usersetup
