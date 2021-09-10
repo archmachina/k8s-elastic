@@ -3,6 +3,7 @@
 resources:
   - service.yaml
   - statefulset.yaml
+  - ingress.yaml
 
 vars:
   - name: ELASTIC_SVC
@@ -19,7 +20,7 @@ vars:
 configMapGenerator:
   - name: elastic-usersetup
     files:
-      - usersetup.sh
+      - usersetup.sh=config/usersetup.sh
 
 secretGenerator:
   - name: elastic-password
