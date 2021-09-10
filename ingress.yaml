@@ -9,17 +9,17 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   tls:
-  - hosts:
-    - "elastic.local"
-    secretName: elastic-cert
+    - hosts:
+        - "elastic.local"
+      secretName: elastic-cert
   rules:
-  - host: "elastic.local"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: elastic-svc
-            port:
-              number: 9200
+    - host: "elastic.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: elastic-svc
+                port:
+                  number: 9200
