@@ -13,7 +13,6 @@ spec:
       component: elastic
   template:
     metadata:
-      namespace: elastic
       labels:
         component: elastic
     spec:
