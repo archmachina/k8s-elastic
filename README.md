@@ -1,1 +1,1 @@
-# k8s-elastic
+# kustomize-elastic
