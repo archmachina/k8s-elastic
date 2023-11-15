@@ -7,6 +7,7 @@ configMapGenerator:
     files:
       - config.py=files/config.py
       - usersetup.sh=files/usersetup.sh
+      - ingress.cfg=files/ingress.cfg
 
   - name: elastic-config
     literals:
@@ -17,6 +18,7 @@ configMapGenerator:
       - replicas=1
       - java_opts=-Xms1g -Xmx1g
       - cluster_name=elastic
+      - ingress_host_port=9200
 
 secretGenerator:
   - name: elastic-cert
