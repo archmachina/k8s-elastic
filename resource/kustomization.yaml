@@ -1,0 +1,32 @@
+---
+
+kind: Kustomization
+
+configMapGenerator:
+  - name: elastic-files
+    files:
+      - config.py=files/config.py
+      - usersetup.sh=files/usersetup.sh
+
+  - name: elastic-config
+    literals:
+      - discovery_seed_hosts=elastic-ss-0.elastic-svc
+      - initial_master_nodes=elastic-ss-0
+      - storage_class=local
+      - fqdn=elastic.local
+      - replicas=1
+      - java_opts=-Xms1g -Xmx1g
+      - cluster_name=elastic
+
+secretGenerator:
+  - name: elastic-cert
+    type: kubernetes.io/tls
+
+  - name: elastic-credentials
+    type: Opaque
+    literals:
+      - localadmin_username=localadmin
+      # - logstash_system_password=changeme
+      # - beats_system_password=changeme
+      - filebeat_username=filebeat_writer
+      - logstash_username=logstash_writer
