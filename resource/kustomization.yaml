@@ -28,7 +28,15 @@ secretGenerator:
     type: Opaque
     literals:
       - localadmin_username=localadmin
+      # - localadmin_password=changeme
+
+      # - elastic_password=changeme
+
       # - logstash_system_password=changeme
       # - beats_system_password=changeme
-      - filebeat_username=filebeat_writer
+      # - kibana_system_password=changeme
+
       - logstash_username=logstash_writer
+      # - logstash_password=changeme
+      - filebeat_username=filebeat_writer
+      # - filebeat_password=changeme
