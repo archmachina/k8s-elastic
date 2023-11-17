@@ -98,7 +98,7 @@ spec:
               value: optional
             - name: ES_JAVA_OPTS
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: elastic-config
                   key: java_opts
           ports:
