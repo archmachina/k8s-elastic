@@ -21,8 +21,8 @@ configMapGenerator:
       - ingress_host_port=9200
 
 secretGenerator:
-  - name: elastic-cert
-    type: kubernetes.io/tls
+  # - name: elastic-cert
+  #   type: kubernetes.io/tls
 
   - name: elastic-credentials
     type: Opaque
